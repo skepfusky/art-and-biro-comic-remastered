@@ -1,2 +1,0 @@
-# Treat HTML files as Vue files.
-*.html linguist-language=Vue
