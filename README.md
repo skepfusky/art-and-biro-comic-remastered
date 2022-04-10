@@ -8,6 +8,11 @@
   My attempt at recreating the <a href="https://www.artbirocomic.com">artbirocomic.com</a> site using Vue 3 and TypeScript.
 </p>
 
+## Disclaimer
+
+This is not a source code or a one-to-one copy of the site whatsoever. This is just an attempt to 
+update the website using the Vue.js framework since it wasn't updated since 2018.
+
 ## Problems
 
 Upon dev-tooling [artbirocomic.com](https://www.artbirocomic.com/) rises a lot of issues relating to performance and
