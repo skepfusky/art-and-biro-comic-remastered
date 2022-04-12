@@ -7,6 +7,7 @@ import { RouterLink } from 'vue-router'
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/comic">Comic</RouterLink>
     <RouterLink to="/about">About</RouterLink>
+    <a href="#" target="_blank">Kickstarter <fa :icon="['fas', 'up-right-from-square']" size="xs" /></a>
   </nav>
 </template>
 
@@ -14,6 +15,10 @@ import { RouterLink } from 'vue-router'
 nav {
   display: flex;
   column-gap: 1rem;
+}
+
+a {
+  color: #202020;
 }
 
 .router-link-active {

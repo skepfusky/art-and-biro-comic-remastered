@@ -5,25 +5,36 @@
         <p>
           This site is an attempt of revamping the layout of
           <a
-            href="https://www.artandbirocomic.com"
+            href="https://www.artbirocomic.com"
             target="_blank"
             rel="noopener noreferrer"
             >
-            artandbirocomic.com</a>.
+            artbirocomic.com</a>.
           It is not affiliated with the author by any means, and is not a fan
           site. The source code for this website is available on
-          <a href="https://github.com/skepfusky/art-and-biro-comic-vue3">GitHub</a>.
+          <a 
+            href="https://github.com/skepfusky/art-and-biro-comic-vue3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+            </a>.
         </p>
+        <br/>
+        <p>Redesigned by @skepfuskyjs. Proudly made in Vue.js.</p>
       </div>
       <div id="social">
-        <font-awesome-icon :icon="['fab', 'facebook']" size="lg" />
-        <font-awesome-icon :icon="['fab', 'twitter']" size="lg" />
+        <fa :icon="['fab', 'facebook']" size="lg" />
+        <fa :icon="['fab', 'twitter']" size="lg" />
+        <fa :icon="['fab', 'patreon']" size="lg" />
       </div>
     </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/styles/variables.scss' as *;
+
 footer {
   background: green;
 }
@@ -33,6 +44,12 @@ footer {
   margin: 0 auto;
   max-width: 1280px;
   display: flex;
+
+  @media only screen and (max-width: $footer-mq-breakpoint) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 #content {
@@ -45,6 +62,12 @@ footer {
 }
 
 p {
-  width: 50%;
+  width: 75%;
+  line-height: 1.25rem;
+  font-size: 0.85rem;
+
+  @media only screen and (max-width: $footer-mq-breakpoint) {
+    width: 100%;
+  }
 }
 </style>

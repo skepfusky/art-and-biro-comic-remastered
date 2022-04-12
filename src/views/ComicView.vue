@@ -1,24 +1,17 @@
 <script setup lang="ts">
-import NavLinks from '@/components/NavLinks.vue';
+import { onMounted } from 'vue';
+import TheHeader from '../components/TheHeader.vue';
 import ModalItem from '../components/ModalItem.vue';
+
 </script>
 
 <template>
-  <div>
-    <header>
-      <div id="wrapper">
-        <div id="header-logo">
-          <img src="" alt="Site logo">
-        </div>
-        <NavLinks />
-      </div>
-    </header>
-    <main>
-      <!-- <ModalItem>
-        It's working
-      </ModalItem> -->
-      <h2>Comic page</h2>
-    </main>
+  <TheHeader :isComic=true />
+  <main>
+    <!-- <ModalItem>
+      It's working
+    </ModalItem> -->
+    <h2>Comic page</h2>
     <div class="current-comic-info">
       <span>
         Page <strong>1</strong> of <strong>69</strong>
@@ -32,10 +25,10 @@ import ModalItem from '../components/ModalItem.vue';
         Press the up down arrow keys to navigate through the pages
       </span>
     </div>
-  </div>
+  </main>
 </template>
 
-<style scoped>
+<style lang="scss">
 .current-comic-info {
   position: absolute;
   bottom: 0;
