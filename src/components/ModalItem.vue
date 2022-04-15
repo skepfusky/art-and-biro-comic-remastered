@@ -1,9 +1,9 @@
 <template>
-  <div class="modal-wrapper">
+  <dialog class="modal-wrapper">
     <div class="modal">
       <slot />
     </div>
-  </div>
+  </dialog>
   <div class="modal-background"></div>
 </template>
 

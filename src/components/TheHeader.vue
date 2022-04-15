@@ -6,6 +6,10 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 defineProps<{ isComic?: boolean }>();
 
+const headerReturn: any = document.querySelector("#header-return");
+const headerReturnBtn: any = document.querySelector("#header-return-btn");
+
+
 onMounted(() => {
   const headerDynamic: any = document.querySelector("header");
   window.onscroll = () => {
@@ -15,23 +19,6 @@ onMounted(() => {
       if (headerDynamic.classList.contains("scroll-down")) return headerDynamic.classList.remove("scroll-down");
     }
   }
-
-  // ! I swear, I'll make this thing work somehow lol
-
-  // const headerReturn: any = document.querySelector("#header-return");
-  // const headerReturnBtn: any = document.querySelector("#header-return-btn");
-
-  // if (comicView) return addEventListener("click", () => {
-  //   comicView.classList.remove("comic-view");
-  //   headerReturn.classList.remove("header-return");
-  //   headerReturnBtn.classList.remove("header-return-btn");
-  // });
-
-  // // Make the header return button remove the classes
-  // if (headerReturnBtn) return onclick = () => {
-  //   comicView.classList.remove("hide")
-  //   headerReturn.classList.remove("main-header-hide")
-  // }
 });
 </script>
 
@@ -60,11 +47,6 @@ onMounted(() => {
       </div>
     </div>
   </header>
-  <div id="header-return" v-if="isComic === true">
-    <div id="wrapper">
-      <button id="header-return-btn"><fa :icon="['fas', 'caret-up']" /> Return</button>
-    </div>
-  </div>
 </template>
 
 <style lang="scss">
@@ -94,14 +76,11 @@ header {
 .comic-view {
   opacity: 0.55;
   box-shadow: none !important;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0);
 
   &:hover{
     opacity: 1;
-  }
-
-  &.hide {
-    transform: translateY(-60%);
+    background: rgba(0, 0, 0, 0.55);
   }
 }
 

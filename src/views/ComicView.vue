@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
 import TheHeader from '../components/TheHeader.vue';
 import ModalItem from '../components/ModalItem.vue';
-
 </script>
 
 <template>
   <TheHeader :isComic=true />
+  <!-- TODO: Add a dynamic route for comics in different languages -->
   <main>
     <!-- <ModalItem>
       It's working
