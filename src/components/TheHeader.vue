@@ -9,7 +9,6 @@ defineProps<{ isComic?: boolean }>();
 const headerReturn: any = document.querySelector("#header-return");
 const headerReturnBtn: any = document.querySelector("#header-return-btn");
 
-
 onMounted(() => {
   const headerDynamic: any = document.querySelector("header");
   window.onscroll = () => {
