@@ -4,11 +4,6 @@ import { onMounted } from "vue";
 import NavLinks from "./NavLinks.vue";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-defineProps<{ isComic?: boolean }>();
-
-const headerReturn: any = document.querySelector("#header-return");
-const headerReturnBtn: any = document.querySelector("#header-return-btn");
-
 onMounted(() => {
   const headerDynamic: any = document.querySelector("header");
   window.onscroll = () => {
@@ -22,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header :class="isComic ? 'comic-view' : ''">
+  <header>
     <div id="wrapper" class="header-desktop">
       <div id="header-logo">
         <router-link to="/">
@@ -56,12 +51,8 @@ header {
   display: flex;
   z-index: 10;
   height: 4.9em;
-  // border: 2px solid orange;
   transition: all 300ms ease;
-
-  &:not(.scroll-down) {
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  }
+  color: #f5f5f5;
 
   #wrapper {
     padding: 2.25ex 1.75rem;
@@ -75,7 +66,7 @@ header {
 .comic-view {
   opacity: 0.55;
   box-shadow: none !important;
-  background: rgba(0, 0, 0, 0);
+  background: #0000;
 
   &:hover{
     opacity: 1;
@@ -116,8 +107,12 @@ header {
 
 .scroll-down {
   height: 4em;
-  background-color: blueviolet;
+  background-color: #f5f5f5;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.7);
+
+  a {
+    color: #202020;
+  }
 }
 
 /**
@@ -165,38 +160,6 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-  }
-}
-
-/**
- * Comic view styles
- */
-
-#header-return {
-  position: fixed;
-  display: flex;
-  z-index: 5;
-  height: 4.9em;
-  width: 100%;
-  margin: 0 auto;
-  transform: translateY(-100%);
-  transition: all 300ms ease;
-
-  &.main-header-hide {
-    transform: translateY(0);
-  }
-
-  #wrapper {
-    padding: 2.25ex 1.75rem;
-    margin: auto;
-    width: 95em;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  button {
-    padding: 1.5ex;
   }
 }
 </style>

@@ -18,7 +18,7 @@ nav {
 }
 
 a {
-  color: #202020;
+  transition: color 300ms ease;
 }
 
 .router-link-active {
