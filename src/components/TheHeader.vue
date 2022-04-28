@@ -5,12 +5,13 @@ import NavLinks from "./NavLinks.vue";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 onMounted(() => {
-  const headerDynamic: any = document.querySelector("header");
+  const headerScroll: any = document.querySelector("header");
+
   window.onscroll = () => {
     if (window.matchMedia("(min-width: 720px)").matches) {
-      window.scrollY > 150 ? headerDynamic.classList.add("scroll-down") : headerDynamic.classList.remove("scroll-down");
+      window.scrollY > 150 ? headerScroll.classList.add("scroll-down") : headerScroll.classList.remove("scroll-down");
     } else {
-      if (headerDynamic.classList.contains("scroll-down")) return headerDynamic.classList.remove("scroll-down");
+      if (headerScroll.classList.contains("scroll-down")) return headerScroll.classList.remove("scroll-down");
     }
   }
 });
@@ -21,7 +22,7 @@ onMounted(() => {
     <div id="wrapper" class="header-desktop">
       <div id="header-logo">
         <router-link to="/">
-          <img src="" alt="Site logo">
+          <img src="@/assets/img/logo.png" alt="Site logo">
         </router-link>
       </div>
       <div id="nav-wrapper">
@@ -46,16 +47,25 @@ onMounted(() => {
 <style lang="scss">
 @use '../assets/styles/variables.scss' as *;
 
+$headerHeight: 5em;
+$headerHeightScroll: 6em;
+$headerLogo: 6.25em;
+$headerLogoScroll: 5em;
+
+$logoTop: -1rem;
+$logoTopScroll: -1.35rem;
+
 header {
   position: fixed;
   display: flex;
   z-index: 10;
-  height: 4.9em;
-  transition: all 300ms ease;
+  height: $headerHeight;
+  transition: all 290ms ease;
   color: #f5f5f5;
 
   #wrapper {
-    padding: 2.25ex 1.75rem;
+    padding: 0 1.75rem;
+    position: relative;
     margin: auto;
     width: 95em;
     justify-content: space-between;
@@ -63,12 +73,19 @@ header {
   }
 }
 
+#header-logo img {
+  width: $headerLogo;
+  position: absolute;
+  top: $logoTop;
+  transition: width 300ms ease, top 300ms ease;
+}
+
 .comic-view {
   opacity: 0.55;
   box-shadow: none !important;
   background: #0000;
 
-  &:hover{
+  &:hover {
     opacity: 1;
     background: rgba(0, 0, 0, 0.55);
   }
@@ -106,9 +123,14 @@ header {
 }
 
 .scroll-down {
-  height: 4em;
+  height: $headerHeightScroll;
   background-color: #f5f5f5;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.7);
+
+  #header-logo img {
+    top: $logoTopScroll;
+    width: $headerLogoScroll;
+  }
 
   a {
     color: #202020;

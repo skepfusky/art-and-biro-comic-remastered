@@ -58,7 +58,7 @@ footer {
 
 #social {
   display: flex;
-  column-gap: 0.66rem;
+  column-gap: 0.99rem;
 }
 
 p {
