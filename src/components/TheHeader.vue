@@ -22,7 +22,7 @@ onMounted(() => {
     <div id="wrapper" class="header-desktop">
       <div id="header-logo">
         <router-link to="/">
-          <img src="@/assets/img/logo.png" alt="Site logo">
+          <img src="/static/logo.png" alt="Site logo">
         </router-link>
       </div>
       <div id="nav-wrapper">

@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
+import CharacterItem from "../components/CharacterItem.vue";
 
 const slogan = "test";
 
@@ -22,7 +23,7 @@ onMounted(() => {
   // #endregion
 
   // #region Vanilla Parallax shit
-  const parallax = document.querySelectorAll("#comic-masonry-layout");
+  // const parallax = document.querySelectorAll("#comic-masonry-layout");
 
   // #endregion
 
@@ -67,6 +68,7 @@ onMounted(() => {
           aliquam corrupti maxime corporis suscipit, repudiandae laboriosam
           reiciendis libero nesciunt, dicta, id ab alias. Numquam ducimus cumque
           voluptate, facere necessitatibus esse?
+          <CharacterItem imgUrl="/static/logo.png" imgAlt="asdasd"/>
         </p>
       </div>
     </section>
