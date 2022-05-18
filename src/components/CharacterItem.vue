@@ -6,7 +6,7 @@ const props = defineProps<{
   imgAlt: string
 }>()
 
-const fileType = props.imgUrl.match(/\.[0-9a-z]+$/i)
+const fileType: any = props.imgUrl.match(/\.[0-9a-z]+$/i)
 const cleanPath = props.imgUrl.replace(fileType,'')
 const pathArray = cleanPath.split('/')
 const folderPath = pathArray[pathArray.length - 2]
