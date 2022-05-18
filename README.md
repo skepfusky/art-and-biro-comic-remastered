@@ -5,28 +5,24 @@
 </a>
 
 <p align="center">
-  My attempt at recreating the <a href="https://www.artbirocomic.com">artbirocomic.com</a> site using
-  Vue 3 and TypeScript.
+  My attempt at recreating the <a href="https://www.artbirocomic.com">artbirocomic.com</a> site written in Nuxt.
 </p>
 
 ## Disclaimer
 
 This is not a source code or a one-to-one copy of the site whatsoever. This is just an attempt to
- update the website using the Vue.js framework since it wasn't updated since 2018.
+ update the website using the Vue.js framework since it wasn't updated since 2021.
 
 ## Problems
 
 > TL;DR: This site has poor performance due to a crap load of CSS and JavaScript code loaded.
 
 Upon dev-tooling [artbirocomic.com](https://www.artbirocomic.com/), including running Lighthouse report
-and code coverage via Chrome DevToosl rises a lot of issues relating performance, unused code, and
+and code coverage via Chrome DevTools rises a lot of issues relating performance, unused code, and
 some level of compatibility from mobile devices since it was generated via Divi, a WordPress site
 builder -- hence the `wp-content` seen on some image assets and some CSS stylesheets and scripts.
 
 ![artbiro_lighthouseresults](https://user-images.githubusercontent.com/94678583/163832830-07a45e0c-5bf7-4d5d-bcad-b508ce89c46b.png)
-
-__The code coverage of artbirocomic.com__
-![code_coverage](https://user-images.githubusercontent.com/94678583/163832960-3f1f2bf9-1c2e-46b0-8b16-cf54cc38a5be.png)
 
 ### Analysis and issues
 
