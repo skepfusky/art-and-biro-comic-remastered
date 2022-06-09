@@ -11,7 +11,7 @@
 ## Disclaimer
 
 This is not a source code or a one-to-one copy of the site whatsoever. This is just an attempt to
- update the website using the Vue.js framework since it wasn't updated since 2021.
+update the website using the Vue.js framework since it wasn't updated since 2021.
 
 ## Problems
 
@@ -27,28 +27,28 @@ builder -- hence the `wp-content` seen on some image assets and some CSS stylesh
 ### Analysis and issues
 
 - Firstly, running Lighthouse test via Chrome DevTools has scored horribly on performance test.
-This is due to unused and bulky CSS and JS code being loaded before being rendered.
+  This is due to unused and bulky CSS and JS code being loaded before being rendered.
 
 - The site doesn't use HTTPS. But it'll be redirected to the secure HTTPS instead of HTTP.
 
 - There were also a lot of issues in terms of cosmetics; for example, Art in a seesaw from the main
-cover of the comic, when the site initially loads will snap from the element and start another
-animation loop, is probably handled via JS since most of the animations from the hero elements
-are mostly handled via JavaScript.
+  cover of the comic, when the site initially loads will snap from the element and start another
+  animation loop, is probably handled via JS since most of the animations from the hero elements
+  are mostly handled via JavaScript.
 
 - A lot of JavaScript will be loaded all at once before rendering the DOM, thus increasing the
-heap memory. When it starts rendering from the DOM, all the initial heap memory gets cut off
-but gradually climbs up until all the elements have been loaded. This is bad as this can 
-cause the website to slow down due to a really huge heap memory, accompanied with a crap load
-of CSS and JS.
+  heap memory. When it starts rendering from the DOM, all the initial heap memory gets cut off
+  but gradually climbs up until all the elements have been loaded. This is bad as this can
+  cause the website to slow down due to a really huge heap memory, accompanied with a crap load
+  of CSS and JS.
 
-- A lot of inline elements *still* animate even when not shown on the viewport (or in other words
-, when you scroll down the page), but the use of the InteractionObserver API is great despite being a
-no-code site builder.
+- A lot of inline elements _still_ animate even when not shown on the viewport (or in other words
+  , when you scroll down the page), but the use of the InteractionObserver API is great despite being a
+  no-code site builder.
 
 - There's a LOT of nested `<div>` elements, with at least being 4 or 7 on average for a certain
-element. And although, it doesn't affect performance, but it varies from different browsers or
-computers. The most nested element contains 54 divs!
+  element. And although, it doesn't affect performance, but it varies from different browsers or
+  computers. The most nested element contains 54 divs!
 
 Obviously, I cannot point most of the stuff generated from the Lighthouse report, but these are
 the ones that are worth pointing out, you can find it via generating a Lighthouse report yourself.
