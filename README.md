@@ -5,13 +5,13 @@
 </a>
 
 <p align="center">
-  My attempt at recreating the <a href="https://www.artbirocomic.com">artbirocomic.com</a> site written in Nuxt.
+  My attempt at recreating the <a href="https://www.artbirocomic.com">artbirocomic.com</a> site written in Next.js.
 </p>
 
 ## Disclaimer
 
 This is not a source code or a one-to-one copy of the site whatsoever. This is just an attempt to
-update the website using the Vue.js framework since it wasn't updated since 2021.
+update the website using the React library since it wasn't updated since 2021.
 
 ## Problems
 
