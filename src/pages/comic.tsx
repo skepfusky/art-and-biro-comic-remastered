@@ -1,3 +1,5 @@
+import { ReactElement } from "react"
+import { ComicLayout } from "@/components/layouts/Layout"
 import BaseHead from "@/components/layouts/BaseHead"
 
 export default function ComicPage() {
@@ -8,3 +10,5 @@ export default function ComicPage() {
     </>
   )
 }
+
+ComicPage.getLayout = (page: ReactElement) => <ComicLayout>{page}</ComicLayout>
