@@ -1,40 +1,89 @@
 .book-container {
-  @apply border-2 border-gray-500 grid place-items-center w-[500px] h-[400px];
-  transform-style: preserve-3d;
-  perspective: 400px;
-  --book-h: 300px;
-  --book-w: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+@keyframes initAnimation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-44deg);
+  }
 }
 
 .book {
+  width: 225px;
+  height: 300px;
   position: relative;
-  width: var(--book-w);
-  height: var(--book-h);
-  transform: rotateY(-30deg);
+  transform-style: preserve-3d;
+  transform: rotateY(-44deg);
+  transition: 1s ease;
+  animation: 1s ease 0s 1 initAnimation;
+}
 
-  &::before {
-    content: "";
-    @apply bg-red-400;
-    position: absolute;
-    width: 30px;
-    height: calc(var(--book-h) - 2 * 3px);
-    top: 3px;
-    transform: translateX(calc(var(--book-w) - 50px / 2 - 3px)) rotateY(90deg) translateX(calc(50px / 2));
-  }
+.book:hover {
+  transform: rotateY(0deg);
+}
 
-  > :first-child {
-    @apply bg-green-400;
-    width: var(--book-w);
-    height: var(--book-h);
-  }
+.book > :first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  width: 225px;
+  height: 300px;
+  transform: translateZ(7.5px);
+  background-color: #01060f;
+  border-radius: 0 0px 0px 0;
+  box-shadow: 5px 5px 20px #666;
+}
 
-  &::after {
-    content: "";
-    // @apply absolute w-[200px] h-[300px] left-0 bg-green-600;
-    position: absolute;
-    width: 200px;
-    height: 300px;
-    left: 0;
-    transform: translateZ(-50px);
-  }
+.book::before {
+  position: absolute;
+  content: ' ';
+  background-color: blue;
+  left: 0;
+  top: 4px;
+  width: 13px;
+  height: 292px;
+  transform: translateX(213.5px) rotateY(90deg);
+  background: linear-gradient(90deg, 
+    #fff 0%,
+    #f9f9f9 5%,
+    #fff 10%,
+    #f9f9f9 15%,
+    #fff 20%,
+    #f9f9f9 25%,
+    #fff 30%,
+    #f9f9f9 35%,
+    #fff 40%,
+    #f9f9f9 45%,
+    #fff 50%,
+    #f9f9f9 55%,
+    #fff 60%,
+    #f9f9f9 65%,
+    #fff 70%,
+    #f9f9f9 75%,
+    #fff 80%,
+    #f9f9f9 85%,
+    #fff 90%,
+    #f9f9f9 95%,
+    #fff 100%
+    );
+}
+
+.book::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 225px;
+  height: 300px;
+  transform: translateZ(-7.5px);
+  background-color: #01060f;
+  border-radius: 0 0px 0px 0;
+  box-shadow: -10px 0 50px 10px #666;
 }
