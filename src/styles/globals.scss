@@ -6,9 +6,23 @@
 
 /*******/
 
+:root {
+  --book-cover-bg: #c0e4f3;
+  --book-height: 300px;
+  --book-width: 225px;
+}
+
 @layer base {
   html {
-    @apply font-open-sans;
+    @apply font-open-sans leading-7;
+  }
+
+  $headings: [ 1 "4xl", 2 "3xl", 3 "2xl", 4 "xl", 5 "lg" ];
+
+  @each $index, $size in $headings {
+    h#{$index} {
+      @apply font-bold font-mouse-memoirs text-#{$size};
+    }
   }
 }
 
@@ -23,6 +37,10 @@
   @apply transition-colors duration-300;
 }
 
+.button-link {
+  @apply border-2 py-[0.3rem] px-[1rem] rounded-lg transition-colors duration-300 hover:text-white border-orange-400 hover:bg-orange-400 text-orange-400;
+}
+
 section {
-  @apply mb-[50%];
+  // @apply mb-[50%];
 }

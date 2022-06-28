@@ -5,10 +5,12 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}"
   ],
+  experimental: {
+    optimizeUniversalDefaults: true,
+  },
   theme: {
     fontFamily: {
       "open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
-      mono: ["Ubuntu Mono", ...defaultTheme.fontFamily.mono],
       "mouse-memoirs": ["Mouse Memoirs", ...defaultTheme.fontFamily.sans]
     },
     extend: {
